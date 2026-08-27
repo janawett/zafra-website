@@ -7,16 +7,125 @@
 <meta name="description" content="Notes on transparency, testing, and traditional salt-making from Zafra Colima Sea Salt.">
 <link rel="canonical" href="https://zafrasalt.com/blog/">
 <link rel="icon" type="image/png" href="../favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #FAFAF5;
+    --dark: #1E1A17;
+    --body-text: #2E2520;
+    --muted: #6B5F55;
+    --kraft: #C8BFB0;
+    --sand: #EDE8DF;
+    --accent: #B08A52;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--body-text);
+    font-family: 'Jost', sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--dark);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 28px;
+  }
+
+  .back-link:hover { color: var(--accent); text-decoration: none; }
+
+  .blog-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 20px 28px 100px;
+  }
+
+  .blog-title {
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 44px;
+  }
+
+  .article-card {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--kraft);
+  }
+
+  .article-card:first-of-type { padding-top: 0; }
+  .article-card:last-of-type { border-bottom: none; }
+
+  .article-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+    font-size: 21px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .article-title a { color: var(--dark); }
+  .article-title a:hover { color: var(--accent); text-decoration: none; }
+
+  .article-excerpt {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--body-text);
+    margin-bottom: 14px;
+  }
+
+  .read-more {
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  @media (max-width: 480px) {
+    .blog-title { font-size: 28px; }
+  }
+
+</style>
 </head>
 <body>
 
-<a href="../index.html">← Zafra</a>
+<a href="../index.html" class="back-link">← Zafra</a>
 
-<h1>Blog</h1>
+<div class="blog-wrap">
+  <h1 class="blog-title">Blog</h1>
 
-<ul>
-  <li><a href="heavy-metals-sea-salt.html">What's Actually in Your Sea Salt? Heavy Metals and Why Testing Matters</a></li>
-</ul>
+  <div class="article-card">
+    <h2 class="article-title"><a href="salt-origin-matters.html">Why Where Your Salt Comes From Actually Matters</a></h2>
+    <p class="article-excerpt">Salt is one of the oldest traded commodities on earth. For most of human history, its origin was everything — and where it comes from still shapes what ends up in the bag.</p>
+    <a href="salt-origin-matters.html" class="read-more">Read more →</a>
+  </div>
+
+  <div class="article-card">
+    <h2 class="article-title"><a href="heavy-metals-sea-salt.html">What's Actually in Your Sea Salt? Heavy Metals and Why Testing Matters</a></h2>
+    <p class="article-excerpt">Most sea salt brands show you a beautiful photo of a coastline and tell you their salt is "natural" and "pure." What they almost never show you is a lab report.</p>
+    <a href="heavy-metals-sea-salt.html" class="read-more">Read more →</a>
+  </div>
+</div>
 
 </body>
 </html>
