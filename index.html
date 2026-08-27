@@ -512,6 +512,68 @@
     color: var(--accent);
   }
 
+  /* ============ EMAIL SIGNUP ============ */
+  .signup-section { padding: 90px 0; }
+
+  .signup-title { margin-bottom: 32px; }
+
+  .signup-form {
+    display: flex;
+    gap: 12px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .signup-input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 18px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: var(--body-text);
+    background: var(--bg);
+    border: 1px solid var(--kraft);
+    border-radius: 2px;
+  }
+
+  .signup-input:focus { outline: none; border-color: var(--accent); }
+
+  .signup-submit {
+    background: var(--dark);
+    color: var(--bg);
+    padding: 15px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.25s ease;
+  }
+
+  .signup-submit:hover { background: var(--accent); }
+
+  .signup-success {
+    display: none;
+    max-width: 440px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--accent);
+  }
+
+  .signup-success.visible { display: block; }
+
+  .signup-form.hidden { display: none; }
+
+  @media (max-width: 480px) {
+    .signup-form { flex-direction: column; }
+  }
+
   /* ============ FOOTER ============ */
   footer {
     background: var(--dark);
@@ -764,6 +826,21 @@
   </div>
 </section>
 
+<!-- ============ EMAIL SIGNUP ============ -->
+<section class="section signup-section section-sand">
+  <div class="container reveal">
+    <h2 class="section-title signup-title">Zafra launches soon. Be the first to know.</h2>
+
+    <form name="zafra-launch-signup" method="POST" data-netlify="true" class="signup-form" id="zafra-signup-form">
+      <input type="hidden" name="form-name" value="zafra-launch-signup">
+      <input type="email" name="email" class="signup-input" placeholder="Enter your email" aria-label="Email address" required>
+      <button type="submit" class="signup-submit">Notify Me</button>
+    </form>
+
+    <p class="signup-success" id="signup-success" role="status">You're on the list. We'll let you know when Zafra is available.</p>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="container">
@@ -806,6 +883,37 @@
     });
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
+
+  // Email signup — Netlify Forms, AJAX submit (no page reload)
+  const signupForm = document.getElementById('zafra-signup-form');
+  const signupSuccess = document.getElementById('signup-success');
+
+  function encodeFormData(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  }
+
+  if (signupForm) {
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = signupForm.email.value;
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData({ 'form-name': 'zafra-launch-signup', email })
+      })
+        .then(() => {
+          signupForm.classList.add('hidden');
+          signupSuccess.classList.add('visible');
+        })
+        .catch((error) => {
+          console.error('Signup form error:', error);
+          alert('Something went wrong. Please try again.');
+        });
+    });
+  }
 </script>
 
 </body>
