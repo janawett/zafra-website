@@ -308,6 +308,26 @@
 
   .tag-pending::before { content: '○'; }
 
+  /* ===== LEAD CONTEXT CALLOUT ===== */
+  .lead-callout {
+    background: #F0EDE6;
+    background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .lead-callout-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
   /* ===== COMPETITIVE CONTEXT ===== */
   .context-box {
     border: 1px solid var(--kraft);
@@ -703,7 +723,10 @@
       </tbody>
     </table>
 
-    <p>Lead is a naturally occurring element in the earth's crust, present at trace levels in coastal sediments and seawater worldwide. Every sea salt contains some measurable amount; a result of zero typically reflects the detection limit of the lab, not the absence of lead in nature. Our result of 0.05 mg/kg is 20 times below the EU's legal maximum for food-grade salt (Regulation 2023/915, Annex I), and consistent with low-contamination sources in published sea salt literature.</p>
+    <div class="lead-callout reveal">
+      <div class="lead-callout-label">A Note on Lead</div>
+      <p>Lead is a naturally occurring element in the earth's crust, present at trace levels in coastal sediments and seawater worldwide. Every sea salt contains some measurable amount; a result of zero typically reflects the detection limit of the lab, not the absence of lead in nature. Our result of 0.05 mg/kg is 20 times below the EU's legal maximum for food-grade salt (Regulation 2023/915, Annex I), and consistent with low-contamination sources in published sea salt literature.</p>
+    </div>
 
     <!-- Competitive context -->
     <div class="context-box reveal">
