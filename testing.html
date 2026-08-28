@@ -24,14 +24,15 @@
     --pending-text: #7A6A50;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--bg);
     color: var(--body-text);
     font-family: 'Jost', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   img { max-width: 100%; display: block; }
@@ -228,10 +229,17 @@
   }
 
   /* ===== RESULTS TABLE ===== */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 20px;
+  }
+
   .results-table {
     width: 100%;
+    min-width: 560px;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 
   .results-table th {
@@ -379,6 +387,14 @@
     grid-template-columns: 140px 1fr 70px;
     gap: 12px;
     align-items: center;
+  }
+
+  @media (max-width: 480px) {
+    .bar-row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .bar-brand { text-align: left; }
   }
 
   .bar-brand {
@@ -669,7 +685,8 @@
     </div>
 
     <!-- Results table -->
-    <table class="results-table reveal">
+    <div class="table-scroll reveal">
+    <table class="results-table">
       <thead>
         <tr>
           <th>Metal</th>
@@ -722,6 +739,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <div class="lead-callout reveal">
       <div class="lead-callout-label">A Note on Lead</div>
