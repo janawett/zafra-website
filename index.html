@@ -8,6 +8,94 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Zafra sea salt safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every batch is independently tested for heavy metals — arsenic, cadmium, mercury, and lead — by SGS México, an EMA-accredited laboratory. Results are published in full at zafrasalt.com/testing. Our lead result is 0.05 mg/kg, twenty times below the EU's legal maximum for food-grade salt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Zafra sea salt contain any additives?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Single ingredient: sea salt. No anti-caking agents, no iodine added, no bleaching, no flow agents. What comes out of Laguna de Cuyutlán is what goes in the bag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does Zafra sea salt come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Laguna de Cuyutlán, on Mexico's Pacific coast in the state of Colima. The salt is produced by the Sociedad Cooperativa de Salineros de Colima, a cooperative established in 1925 whose members have worked the same lagoon for generations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Zafra harvested?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salineros draw brine from traditional wells sunk into the subsoil beneath the lagoon — not from the open ocean. The brine is laid into shallow clay-lined beds where the Pacific sun and coastal wind evaporate it slowly, until only salt remains. It is then harvested by hand."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Colima sea salt different from other sea salts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most commercial sea salt comes from open ocean evaporation or underground mining. Colima salt is drawn from subsoil brine beneath a protected coastal lagoon, naturally filtered through mineral-rich earth and volcanic sand before it ever reaches the surface. The process hasn't changed in centuries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there lead in Zafra sea salt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A small, naturally occurring amount — 0.05 mg/kg (50 ppb). Lead is present in the earth's crust and measurable at trace levels in virtually every sea salt on the market. A result of zero typically means the lab's detection limit was reached, not that lead is truly absent. Our result is twenty times below the EU legal maximum for food-grade salt and at the low end of published sea salt data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does 'heavy metal tested' mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An accredited third-party laboratory analyzed the salt for arsenic, cadmium, mercury, and lead using ICP-MS, the gold standard method for trace metal detection. The lab's full report is available for download at zafrasalt.com/testing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Zafra sea salt organic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Salt is a mineral, not an agricultural product, so USDA Organic certification does not apply to sea salt. Zafra is unrefined and additive-free, but we do not use the word 'organic' because it has a specific legal meaning that doesn't apply here."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Zafra kosher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The cooperative holds OU Kosher certification."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When will Zafra be available to buy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zafra launches soon on Amazon US. Sign up at zafrasalt.com to be notified the moment it's live."
+      }
+    }
+  ]
+}
+</script>
 <style>
 
   :root {
@@ -602,6 +690,57 @@
     .signup-form { flex-direction: column; }
   }
 
+  /* ============ FAQ ============ */
+  .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--kraft);
+  }
+
+  .faq-item:last-of-type { border-bottom: none; }
+
+  .faq-question {
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding: 22px 36px 22px 0;
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question::marker { content: ''; }
+
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    top: 20px;
+    right: 4px;
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .faq-item[open] .faq-question::after { content: '\2212'; }
+
+  .faq-answer {
+    padding: 0 36px 24px 0;
+  }
+
+  .faq-answer p {
+    font-family: 'Jost', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--body-text);
+  }
+
   /* ============ FOOTER ============ */
   footer {
     background: var(--dark);
@@ -866,6 +1005,85 @@
     </form>
 
     <p class="signup-success" id="signup-success" role="status">You're on the list. We'll let you know when Zafra is available.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-eyebrow reveal">Frequently Asked Questions</div>
+
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary class="faq-question">Is Zafra sea salt safe?</summary>
+        <div class="faq-answer">
+          <p>Yes. Every batch is independently tested for heavy metals — arsenic, cadmium, mercury, and lead — by SGS México, an EMA-accredited laboratory. Results are published in full at zafrasalt.com/testing. Our lead result is 0.05 mg/kg, twenty times below the EU's legal maximum for food-grade salt.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Does Zafra sea salt contain any additives?</summary>
+        <div class="faq-answer">
+          <p>No. Single ingredient: sea salt. No anti-caking agents, no iodine added, no bleaching, no flow agents. What comes out of Laguna de Cuyutlán is what goes in the bag.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Where does Zafra sea salt come from?</summary>
+        <div class="faq-answer">
+          <p>Laguna de Cuyutlán, on Mexico's Pacific coast in the state of Colima. The salt is produced by the Sociedad Cooperativa de Salineros de Colima, a cooperative established in 1925 whose members have worked the same lagoon for generations.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How is Zafra harvested?</summary>
+        <div class="faq-answer">
+          <p>Salineros draw brine from traditional wells sunk into the subsoil beneath the lagoon — not from the open ocean. The brine is laid into shallow clay-lined beds where the Pacific sun and coastal wind evaporate it slowly, until only salt remains. It is then harvested by hand.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What makes Colima sea salt different from other sea salts?</summary>
+        <div class="faq-answer">
+          <p>Most commercial sea salt comes from open ocean evaporation or underground mining. Colima salt is drawn from subsoil brine beneath a protected coastal lagoon, naturally filtered through mineral-rich earth and volcanic sand before it ever reaches the surface. The process hasn't changed in centuries.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Is there lead in Zafra sea salt?</summary>
+        <div class="faq-answer">
+          <p>A small, naturally occurring amount — 0.05 mg/kg (50 ppb). Lead is present in the earth's crust and measurable at trace levels in virtually every sea salt on the market. A result of zero typically means the lab's detection limit was reached, not that lead is truly absent. Our result is twenty times below the EU legal maximum for food-grade salt and at the low end of published sea salt data.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What does "heavy metal tested" mean?</summary>
+        <div class="faq-answer">
+          <p>An accredited third-party laboratory — not us — analyzed the salt for arsenic, cadmium, mercury, and lead using ICP-MS, the gold standard method for trace metal detection. The lab's full report, including sample ID, lot number, method, and detection limits, is available for download at zafrasalt.com/testing.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Is Zafra sea salt organic?</summary>
+        <div class="faq-answer">
+          <p>Salt is a mineral, not an agricultural product, so USDA Organic certification does not apply to sea salt. Zafra is unrefined, additive-free, and produced without synthetic inputs — but we do not use the word "organic" because it has a specific legal meaning that doesn't apply here.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Is Zafra kosher?</summary>
+        <div class="faq-answer">
+          <p>Yes. The cooperative holds OU Kosher certification.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">When will Zafra be available to buy?</summary>
+        <div class="faq-answer">
+          <p>Zafra launches soon on Amazon US. Sign up at zafrasalt.com to be notified the moment it's live.</p>
+        </div>
+      </details>
+    </div>
   </div>
 </section>
 
