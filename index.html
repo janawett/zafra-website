@@ -270,6 +270,11 @@
     letter-spacing: 0.02em;
   }
 
+  .stat-pre-hispanic {
+    white-space: nowrap;
+    font-size: clamp(24px, 2.9vw, 34px);
+  }
+
   .stat-label {
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -474,7 +479,7 @@
 
   .product-info .price {
     font-family: 'Cinzel', serif;
-    font-size: 30px;
+    font-size: 20px;
     color: var(--dark);
     margin: 18px 0 26px;
   }
@@ -492,8 +497,7 @@
   }
 
   .claim-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--kraft);
+    padding: 0.5rem 0;
     font-size: 14.5px;
     color: var(--body-text);
     display: flex;
@@ -715,7 +719,7 @@
 <div class="stats-band">
   <div class="container stats-grid">
     <div>
-      <div class="stat-number">Pre-Hispanic</div>
+      <div class="stat-number stat-pre-hispanic">Pre&#8209;Hispanic</div>
       <div class="stat-label">First Harvested</div>
     </div>
     <div>
@@ -829,7 +833,7 @@
           <li>No additives, no anti-caking agents, no bleaching</li>
         </ul>
         <p style="font-size: 13px; color: var(--muted); font-family: 'Cormorant Garamond', serif; font-style: italic; margin-bottom: 24px; line-height: 1.6;">You may notice natural moisture and tiny flecks of black volcanic sand — both signs of a truly unrefined salt. Pinch by hand, don't shake.</p>
-        <a href="#notify" class="btn-primary">Notify Me When Available</a>
+        <a href="#notify" class="btn-gold">Notify Me When Available</a>
       </div>
     </div>
   </div>
