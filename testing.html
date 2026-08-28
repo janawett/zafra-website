@@ -533,6 +533,42 @@
 
   .btn-download:hover { background: var(--accent); }
 
+  /* ===== TOP LAB CTA (permanent gold) ===== */
+  .lab-cta {
+    text-align: center;
+    padding: 0 0 60px;
+  }
+
+  .lab-cta-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .btn-gold-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: var(--dark);
+    border: none;
+    padding: 14px 30px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+
+  .btn-gold-download:hover { filter: brightness(0.94); transform: translateY(-1px); }
+
+  .plain-download-link {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
   /* ===== FOOTER ===== */
   footer {
     background: var(--dark);
@@ -577,6 +613,16 @@
 <div class="principle">
   <div class="container">
     <p>Independent studies have found lead in <strong>96% of sea salts tested</strong>, with popular wellness brands ranging from 100–500 ppb.<br>Zafra: <strong>50 ppb.</strong></p>
+  </div>
+</div>
+
+<!-- TOP LAB CTA -->
+<div class="lab-cta reveal">
+  <div class="container">
+    <div class="lab-cta-label">SGS México · Report HN26-002056 · EMA Accredited</div>
+    <a href="made_by_hand_llc_-_zafra_colima_sea_salt_test_results.pdf" class="btn-gold-download" download>
+      ↓ Download Lab Certificate
+    </a>
   </div>
 </div>
 
@@ -768,10 +814,7 @@
 <!-- DOWNLOAD -->
 <section class="download-section">
   <div class="container reveal">
-    <p>The full SGS laboratory report is available for download.</p>
-    <a href="made_by_hand_llc_-_zafra_colima_sea_salt_test_results.pdf" class="btn-download" download>
-      ↓ Download SGS Report HN26-002056
-    </a>
+    <p>The full SGS laboratory report is available for download. <a href="made_by_hand_llc_-_zafra_colima_sea_salt_test_results.pdf" class="plain-download-link" download>↓ Download SGS Report HN26-002056</a></p>
   </div>
 </section>
 
