@@ -25,15 +25,16 @@
     --accent: #B08A52;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--bg);
     color: var(--body-text);
     font-family: 'Jost', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
   }
 
   img { max-width: 100%; display: block; }
