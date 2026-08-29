@@ -356,10 +356,20 @@
     color: var(--bg);
     letter-spacing: 0.03em;
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stats-grid > div:not(:first-child) .stat-phrase::before {
+    content: '✦';
+    color: var(--accent);
+    font-size: 0.6em;
   }
 
   @media (max-width: 700px) {
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .stats-grid > div:nth-child(3) .stat-phrase::before { content: none; }
   }
 
   /* ============ SECTION GENERIC ============ */
