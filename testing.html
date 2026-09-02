@@ -122,17 +122,18 @@
   .nav-back:hover { color: var(--dark); }
   .nav-back::before { content: '←'; font-size: 14px; }
 
-  /* ===== TESTING HERO (split layout) ===== */
+  /* ===== TESTING HERO (full-bleed image) ===== */
   .testing-hero {
-    display: flex;
-    min-height: 70vh;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
   }
 
-  .testing-hero-media {
-    width: 50%;
-  }
-
-  .testing-hero-media img {
+  .testing-hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -140,13 +141,25 @@
     display: block;
   }
 
-  .testing-hero-content {
-    width: 50%;
-    background: var(--dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 100px 56px 64px;
+  .testing-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0,0,0,0.15) 0%,
+      rgba(30,26,23,0.75) 60%,
+      rgba(30,26,23,0.92) 100%
+    );
+  }
+
+  .testing-hero-text {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translateY(-50%);
+    max-width: 520px;
+    text-align: left;
+    z-index: 2;
   }
 
   .testing-hero-eyebrow {
@@ -157,46 +170,32 @@
     margin-bottom: 18px;
   }
 
-  .testing-hero-content h1 {
+  .testing-hero-text h1 {
     font-family: 'Cinzel', serif;
-    font-size: clamp(26px, 3.2vw, 38px);
+    font-size: clamp(30px, 4vw, 44px);
     color: var(--bg);
     letter-spacing: 0.04em;
     font-weight: 500;
     margin-bottom: 20px;
   }
 
-  .testing-hero-lead {
+  .testing-hero-body {
     font-family: 'Jost', sans-serif;
-    font-size: 19px;
-    color: #EDE3CE;
+    font-size: 18px;
+    color: rgba(250,250,245,0.85);
     line-height: 1.6;
-    margin-bottom: 28px;
-  }
-
-  .testing-hero-results p {
-    font-family: 'Jost', sans-serif;
-    font-size: 17px;
-    color: #EDE3CE;
-    line-height: 1.65;
-    margin-bottom: 12px;
-  }
-
-  .testing-hero-results strong {
-    color: #fff;
-    font-weight: 500;
+    margin-bottom: 20px;
   }
 
   .testing-hero-footnote {
+    font-family: 'Jost', sans-serif;
     font-size: 13px;
-    color: #A89B8C;
-    margin-top: 20px;
+    color: rgba(250,250,245,0.6);
   }
 
   @media (max-width: 860px) {
-    .testing-hero { flex-direction: column; min-height: auto; }
-    .testing-hero-media { width: 100%; height: 40vh; }
-    .testing-hero-content { width: 100%; padding: 48px 28px; }
+    .testing-hero { height: 60vh; }
+    .testing-hero-text { right: 24px; left: 24px; max-width: none; }
   }
 
   /* ===== SECTIONS ===== */
@@ -649,18 +648,12 @@
 
 <!-- HERO -->
 <section class="testing-hero">
-  <div class="testing-hero-media">
-    <img src="zafra-salt-spoon-dark.jpg" alt="Zafra Colima sea salt on a wooden spoon">
-  </div>
-  <div class="testing-hero-content">
+  <img src="zafra-salt-spoon-dark.jpg" alt="Zafra Colima sea salt on a wooden spoon">
+  <div class="testing-hero-overlay"></div>
+  <div class="testing-hero-text">
     <div class="testing-hero-eyebrow">Third-Party Testing</div>
     <h1>Proof, Not Promises</h1>
-    <p class="testing-hero-lead">We test every batch. We publish every result. Here's what's in your salt.</p>
-    <div class="testing-hero-results">
-      <p>Arsenic · Cadmium · Mercury — <strong>not detected</strong>.</p>
-      <p>Lead — <strong>0.05 mg/kg</strong>. A naturally occurring trace element in seawater. 95% below the legal limit for food-grade salt.</p>
-      <p>Aluminum — <strong>3.9 mg/kg</strong>. Naturally occurring. Well within the range of the cleanest salts independently tested.</p>
-    </div>
+    <p class="testing-hero-body">We test every batch. We publish every result.</p>
     <p class="testing-hero-footnote">Third-party verified by SGS México. Full lab reports available to download.</p>
   </div>
 </section>
