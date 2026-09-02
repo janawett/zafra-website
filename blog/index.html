@@ -61,12 +61,6 @@
     padding: 20px 28px 100px;
   }
 
-  .blog-title {
-    font-size: 34px;
-    line-height: 1.3;
-    margin-bottom: 44px;
-  }
-
   .article-card {
     padding: 32px 0;
     border-bottom: 1px solid var(--kraft);
@@ -102,8 +96,52 @@
     color: var(--accent);
   }
 
+  .blog-hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .blog-hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .blog-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.1) 0%,
+      rgba(30,26,23,0.6) 100%
+    );
+  }
+
+  .blog-hero-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 34px;
+    color: var(--bg);
+    z-index: 1;
+    margin: 0;
+  }
+
   @media (max-width: 480px) {
-    .blog-title { font-size: 28px; }
+    .blog-hero { height: 40vh; }
+    .blog-hero-label { font-size: 28px; }
   }
 
 </style>
@@ -112,8 +150,14 @@
 
 <a href="../index.html" class="back-link">← Zafra</a>
 
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <img src="../zafra-salt-harvest-hand.jpg" alt="Salt harvest at Laguna de Cuyutlán, Colima, Mexico">
+  <div class="blog-hero-overlay"></div>
+  <h1 class="blog-hero-label">Blog</h1>
+</section>
+
 <div class="blog-wrap">
-  <h1 class="blog-title">Blog</h1>
 
   <div class="article-card">
     <h2 class="article-title"><a href="salt-origin-matters.html">Why Where Your Salt Comes From Actually Matters</a></h2>
