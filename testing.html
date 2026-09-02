@@ -18,7 +18,7 @@
       "name": "Is Zafra sea salt safe?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Every batch is independently tested for heavy metals — arsenic, cadmium, mercury, and lead — by SGS México, an EMA-accredited laboratory. Results are published in full at zafrasalt.com/testing. Our lead result is 0.05 mg/kg, twenty times below the EU's legal maximum for food-grade salt."
+        "text": "Yes. Every batch is independently tested for heavy metals — arsenic, cadmium, mercury, lead, and aluminum — by SGS México, an EMA-accredited laboratory. Results are published in full at zafrasalt.com/testing. Our lead result is 0.05 mg/kg, 95% below the EU's legal maximum for food-grade salt."
       }
     },
     {
@@ -26,7 +26,7 @@
       "name": "Is there lead in Zafra sea salt?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A small, naturally occurring amount — 0.05 mg/kg (50 ppb). Lead is present in the earth's crust and measurable at trace levels in virtually every sea salt on the market. A result of zero typically means the lab's detection limit was reached, not that lead is truly absent. Our result is twenty times below the EU legal maximum for food-grade salt and at the low end of published sea salt data."
+        "text": "A small, naturally occurring amount — 0.05 mg/kg. Lead is present in the earth's crust and measurable at trace levels in virtually every sea salt on the market. A result of zero typically means the lab's detection limit was reached, not that lead is truly absent. Our result is 95% below the EU legal maximum for food-grade salt and at the low end of published sea salt data."
       }
     },
     {
@@ -34,7 +34,7 @@
       "name": "What does 'heavy metal tested' mean?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An accredited third-party laboratory analyzed the salt for arsenic, cadmium, mercury, and lead using ICP-MS, the gold standard method for trace metal detection. The lab's full report is available for download at zafrasalt.com/testing."
+        "text": "An accredited third-party laboratory analyzed the salt for arsenic, cadmium, mercury, lead, and aluminum using ICP-MS, the gold standard method for trace metal detection. The lab's full reports are available for download at zafrasalt.com/testing."
       }
     }
   ]
@@ -52,8 +52,6 @@
     --accent: #B08A52;
     --pass-green: #3A6B4A;
     --pass-bg: #EDF4F0;
-    --pending-bg: #F5F2EC;
-    --pending-text: #7A6A50;
   }
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -146,8 +144,8 @@
     background: var(--dark);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 64px 56px;
+    justify-content: flex-start;
+    padding: 100px 56px 64px;
   }
 
   .testing-hero-eyebrow {
@@ -199,7 +197,7 @@
 
   @media (max-width: 860px) {
     .testing-hero { flex-direction: column; min-height: auto; }
-    .testing-hero-media { width: 100%; height: 40vw; }
+    .testing-hero-media { width: 100%; height: 40vh; }
     .testing-hero-content { width: 100%; padding: 48px 28px; }
   }
 
@@ -207,6 +205,8 @@
   .section {
     padding: 72px 0;
   }
+
+  .faq-section { padding-top: 40px; }
 
   .section-sand { background: var(--sand); }
 
@@ -349,6 +349,14 @@
 
   .tag-nd::before { content: '◎'; }
 
+  .tag-neutral {
+    background: var(--sand);
+    color: var(--muted);
+    border: 1px solid rgba(107,95,85,0.2);
+  }
+
+  .tag-neutral::before { content: '●'; }
+
   /* ===== LEAD CONTEXT CALLOUT ===== */
   .lead-callout {
     background: #F0EDE6;
@@ -368,6 +376,8 @@
     font-weight: 500;
     margin-bottom: 10px;
   }
+
+  .lead-callout p + p { margin-top: 12px; }
 
   /* ===== COMPETITIVE CONTEXT ===== */
   .context-box {
@@ -743,7 +753,7 @@
           <td><div class="result-value">3.9 mg/kg</div></td>
           <td style="color: var(--muted); font-size:13px;">1.0 mg/kg</td>
           <td style="color: var(--muted); font-size:13px;">—*</td>
-          <td><span class="result-tag tag-pass">Naturally Occurring</span></td>
+          <td><span class="result-tag tag-neutral">Naturally Occurring</span></td>
         </tr>
       </tbody>
     </table>
@@ -787,9 +797,16 @@
   </div>
 </div>
 
-<!-- LEAD CONTEXT -->
+<!-- NOTES -->
 <section class="section">
   <div class="container">
+
+    <div class="lead-callout reveal">
+      <div class="lead-callout-label">A Note on Aluminum</div>
+      <p>The wellness conversation around aluminum is real, and we take it seriously — which is why we tested for it.</p>
+      <p>Salt is a minor source of dietary aluminum compared to grains, vegetables, tea, and food additives. At normal salt consumption, the contribution from salt is a small fraction of daily intake from all sources combined.</p>
+      <p>The 3.9 mg/kg in Zafra is consistent with the lowest levels found in independently tested sea salts.</p>
+    </div>
 
     <div class="lead-callout reveal">
       <div class="lead-callout-label">A Note on Lead</div>
@@ -841,7 +858,7 @@
 </section>
 
 <!-- FAQ -->
-<section class="section">
+<section class="section faq-section">
   <div class="container">
     <div class="reveal">
       <div class="section-label">Frequently Asked Questions</div>
@@ -851,21 +868,21 @@
       <details class="faq-item">
         <summary class="faq-question">Is Zafra sea salt safe?</summary>
         <div class="faq-answer">
-          <p>Yes. Every batch is independently tested for heavy metals — arsenic, cadmium, mercury, and lead — by SGS México, an EMA-accredited laboratory. Results are published in full at zafrasalt.com/testing. Our lead result is 0.05 mg/kg, twenty times below the EU's legal maximum for food-grade salt.</p>
+          <p>Yes. Every batch is independently tested for heavy metals — arsenic, cadmium, mercury, lead, and aluminum — by SGS México, an EMA-accredited laboratory. Results are published in full at zafrasalt.com/testing. Our lead result is 0.05 mg/kg, 95% below the EU's legal maximum for food-grade salt.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary class="faq-question">Is there lead in Zafra sea salt?</summary>
         <div class="faq-answer">
-          <p>A small, naturally occurring amount — 0.05 mg/kg (50 ppb). Lead is present in the earth's crust and measurable at trace levels in virtually every sea salt on the market. A result of zero typically means the lab's detection limit was reached, not that lead is truly absent. Our result is twenty times below the EU legal maximum for food-grade salt and at the low end of published sea salt data.</p>
+          <p>A small, naturally occurring amount — 0.05 mg/kg. Lead is present in the earth's crust and measurable at trace levels in virtually every sea salt on the market. A result of zero typically means the lab's detection limit was reached, not that lead is truly absent. Our result is 95% below the EU legal maximum for food-grade salt and at the low end of published sea salt data.</p>
         </div>
       </details>
 
       <details class="faq-item">
         <summary class="faq-question">What does "heavy metal tested" mean?</summary>
         <div class="faq-answer">
-          <p>An accredited third-party laboratory — not us — analyzed the salt for arsenic, cadmium, mercury, and lead using ICP-MS, the gold standard method for trace metal detection. The lab's full report, including sample ID, lot number, method, and detection limits, is available for download at zafrasalt.com/testing.</p>
+          <p>An accredited third-party laboratory — not us — analyzed the salt for arsenic, cadmium, mercury, lead, and aluminum using ICP-MS, the gold standard method for trace metal detection. The lab's full reports, including sample ID, lot number, method, and detection limits, are available for download at zafrasalt.com/testing.</p>
         </div>
       </details>
     </div>
