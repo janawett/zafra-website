@@ -155,7 +155,7 @@
   .testing-hero-text {
     position: absolute;
     top: 55%;
-    right: 8%;
+    left: 8%;
     transform: translateY(-50%);
     max-width: 520px;
     text-align: left;
@@ -275,6 +275,8 @@
     color: var(--dark);
     font-weight: 500;
   }
+
+  .meta-cell .value + .value { margin-top: 4px; }
 
   @media (max-width: 600px) {
     .report-meta { grid-template-columns: 1fr 1fr; }
@@ -725,7 +727,8 @@
       </div>
       <div class="meta-cell">
         <div class="label">Reports</div>
-        <div class="value">HN26-002056 (Jul 7, 2026) · HN26-002884 (Sep 1, 2026)</div>
+        <div class="value">HN26-002056 · July 7, 2026 — Heavy Metals</div>
+        <div class="value">HN26-002884 · September 1, 2026 — Aluminum</div>
       </div>
     </div>
 
