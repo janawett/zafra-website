@@ -195,7 +195,21 @@
 
   @media (max-width: 860px) {
     .testing-hero { height: 60vh; }
-    .testing-hero-text { right: 24px; left: 24px; max-width: none; }
+    .testing-hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(30,26,23,0.90) 0%,
+        rgba(0,0,0,0.1) 60%
+      );
+    }
+    .testing-hero-text {
+      top: auto;
+      right: auto;
+      bottom: 2rem;
+      left: 1.5rem;
+      transform: none;
+      max-width: 90%;
+    }
   }
 
   /* ===== SECTIONS ===== */
@@ -378,11 +392,14 @@
 
   /* ===== COMPETITIVE CONTEXT ===== */
   .context-box {
+    background: var(--bg);
     border: 1px solid var(--kraft);
     border-radius: 4px;
     overflow: hidden;
     margin-top: 40px;
   }
+
+  .context-box:first-child { margin-top: 0; }
 
   .context-header {
     background: var(--dark);
@@ -487,6 +504,35 @@
     color: var(--accent);
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+
+  /* ===== CONTEXT CHARTS (photo background) ===== */
+  .charts-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .charts-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .charts-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20,16,13,0.85);
+  }
+
+  .charts-content {
+    position: relative;
+    z-index: 1;
+    padding: 72px 28px;
   }
 
   /* ===== ACCREDITATION ===== */
@@ -804,7 +850,16 @@
       <p>Lead is a naturally occurring element in the earth's crust, present at trace levels in coastal sediments and seawater worldwide. Every sea salt contains some measurable amount; a result of zero typically reflects the detection limit of the lab, not the absence of lead in nature. Our result of 0.05 mg/kg is 20 times below the EU's legal maximum for food-grade salt (Regulation 2023/915, Annex I), and consistent with low-contamination sources in published sea salt literature.</p>
     </div>
 
-    <!-- Competitive context -->
+  </div>
+</section>
+
+<!-- CONTEXT CHARTS -->
+<section class="charts-section">
+  <img src="zafra-salt-harvest-hand.jpg" alt="Salt harvest at Laguna de Cuyutlán, Colima, Mexico">
+  <div class="charts-overlay"></div>
+  <div class="container charts-content">
+
+    <!-- Chart 1: Lead -->
     <div class="context-box reveal">
       <div class="context-header">
         <span>Lead in Sea Salt — Context</span>
@@ -842,6 +897,83 @@
       </div>
       <div class="context-note">
         * Jacobsen and Maldon report "not detected" at a 20 ppb detection threshold. Zafra's laboratory uses a 10 ppb threshold — twice the sensitivity. Colima sea salt was specifically noted in the study for the lowest cadmium of all 23 salts tested. Figures for other brands are drawn from published independent research; Zafra makes no claims on their behalf.
+      </div>
+    </div>
+
+    <!-- Chart 2: Arsenic -->
+    <div class="context-box reveal">
+      <div class="context-header">
+        <span>Arsenic in Sea Salt — Context</span>
+        <span class="context-source">SOURCE: ABNRF/SALADINO INDEPENDENT STUDY, 7 SALTS TESTED</span>
+      </div>
+      <div class="context-intro">
+        Independent research found arsenic present in the majority of commercial sea salts tested. The following figures are drawn from published third-party studies, not Zafra's own testing.
+      </div>
+      <div class="context-bars">
+        <div class="bar-row">
+          <div class="bar-brand">Celtic Sea Salt</div>
+          <div class="bar-track"><div class="bar-fill high" style="width: 100%"></div></div>
+          <div class="bar-value">0.12 mg/kg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-brand">Redmond Real Salt</div>
+          <div class="bar-track"><div class="bar-fill high" style="width: 13%"></div></div>
+          <div class="bar-value">0.016 mg/kg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-brand zafra-brand">Zafra ✦</div>
+          <div class="bar-track"><div class="bar-fill zafra" style="width: 5%"></div></div>
+          <div class="bar-value">ND</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-brand">Kirkland / Maldon / Jacobsen</div>
+          <div class="bar-track"><div class="bar-fill nd" style="width: 4%"></div></div>
+          <div class="bar-value nd-val">ND</div>
+        </div>
+      </div>
+      <div class="context-note">
+        ND = not detected at lab's detection threshold of 0.01 mg/kg. Figures drawn from published independent research; Zafra makes no claims on their behalf.
+      </div>
+    </div>
+
+    <!-- Chart 3: Aluminum -->
+    <div class="context-box reveal">
+      <div class="context-header">
+        <span>Aluminum in Sea Salt — Context</span>
+        <span class="context-source">SOURCE: ABNRF/SALADINO INDEPENDENT STUDY, 7 SALTS TESTED</span>
+      </div>
+      <div class="context-intro">
+        Independent research found aluminum present in the majority of commercial sea salts tested. The following figures are drawn from published third-party studies, not Zafra's own testing.
+      </div>
+      <div class="context-bars">
+        <div class="bar-row">
+          <div class="bar-brand">Kirkland Signature</div>
+          <div class="bar-track"><div class="bar-fill high" style="width: 100%"></div></div>
+          <div class="bar-value">340 mg/kg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-brand">Celtic Sea Salt</div>
+          <div class="bar-track"><div class="bar-fill high" style="width: 76%"></div></div>
+          <div class="bar-value">260 mg/kg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-brand">Redmond Real Salt</div>
+          <div class="bar-track"><div class="bar-fill high" style="width: 44%"></div></div>
+          <div class="bar-value">150 mg/kg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-brand zafra-brand">Zafra ✦</div>
+          <div class="bar-track"><div class="bar-fill zafra" style="width: 1%"></div></div>
+          <div class="bar-value">3.9 mg/kg</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-brand">Jacobsen / Maldon</div>
+          <div class="bar-track"><div class="bar-fill nd" style="width: 4%"></div></div>
+          <div class="bar-value nd-val">ND</div>
+        </div>
+      </div>
+      <div class="context-note">
+        ND = not detected. Figures drawn from published independent research; Zafra makes no claims on their behalf. No EU regulatory maximum exists for aluminum in food-grade salt.
       </div>
     </div>
 
