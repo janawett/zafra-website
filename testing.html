@@ -279,10 +279,11 @@
 
   .meta-cell .value + .value { margin-top: 4px; }
 
+  .report-line { font-size: 0.85rem; font-weight: 400; }
+
   @media (max-width: 600px) {
     .report-meta { grid-template-columns: 1fr 1fr; }
     .meta-cell:nth-child(3) { grid-column: 1 / -1; }
-    .report-line { font-size: 0.85rem; font-weight: 400; }
   }
 
   /* ===== RESULTS TABLE ===== */
@@ -394,160 +395,6 @@
   }
 
   .lead-callout p + p { margin-top: 12px; }
-
-  /* ===== COMPETITIVE CONTEXT ===== */
-  .context-box {
-    background: var(--bg);
-    border: 1px solid var(--kraft);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 40px;
-  }
-
-  .context-box:first-child { margin-top: 0; }
-
-  .context-header {
-    background: var(--dark);
-    padding: 16px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .context-header span {
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #C8B896;
-  }
-
-  .context-source {
-    font-size: 10px;
-    color: #8A7A6A;
-    letter-spacing: 0.08em;
-  }
-
-  @media (max-width: 600px) {
-    .context-header {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem 1.25rem;
-      gap: 6px;
-    }
-  }
-
-  .context-intro {
-    padding: 20px 20px 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.65;
-    border-top: none;
-  }
-
-  .context-bars {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .bar-row {
-    display: grid;
-    grid-template-columns: 140px 1fr 70px;
-    gap: 12px;
-    align-items: center;
-  }
-
-  @media (max-width: 480px) {
-    .bar-row {
-      grid-template-columns: 1fr;
-      gap: 6px;
-    }
-    .bar-brand { text-align: left; }
-  }
-
-  .bar-brand {
-    font-size: 12px;
-    color: var(--body-text);
-    text-align: right;
-  }
-
-  .bar-brand.zafra-brand {
-    font-weight: 600;
-    color: var(--dark);
-  }
-
-  .bar-track {
-    height: 8px;
-    background: rgba(200,191,176,0.3);
-    border-radius: 2px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .bar-fill {
-    height: 100%;
-    border-radius: 2px;
-    transition: width 1s ease;
-  }
-
-  .bar-fill.zafra { background: var(--accent); }
-  .bar-fill.moderate { background: #C49A6C; }
-  .bar-fill.high { background: #C47A50; }
-  .bar-fill.nd { background: #A8C0A8; }
-
-  .bar-value {
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    color: var(--dark);
-  }
-
-  .bar-value.nd-val { color: var(--pass-green); font-family: 'Jost', sans-serif; font-size: 11px; }
-
-  .context-note {
-    padding: 14px 20px;
-    border-top: 1px solid var(--kraft);
-    font-size: 11.5px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  .context-note a {
-    color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-
-  /* ===== CONTEXT CHARTS (photo background) ===== */
-  .charts-section {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .charts-section img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-  }
-
-  .charts-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(20,16,13,0.85);
-  }
-
-  .charts-content {
-    position: relative;
-    z-index: 1;
-    padding: 72px 28px;
-  }
 
   /* ===== ACCREDITATION ===== */
   .accreditation-bar {
@@ -755,8 +602,8 @@
       </div>
       <div class="meta-cell">
         <div class="label">Reports</div>
-        <div class="value report-line">HN26-002056 · July 7, 2026 — Heavy Metals</div>
-        <div class="value report-line">HN26-002884 · September 1, 2026 — Aluminum</div>
+        <div class="value report-line">HN26-002056 · Jul 7, 2026 · Heavy Metals</div>
+        <div class="value report-line">HN26-002884 · Sep 1, 2026 · Aluminum</div>
       </div>
     </div>
 
@@ -883,56 +730,6 @@
     <div class="lead-callout reveal">
       <div class="lead-callout-label">A Note on Lead</div>
       <p>Lead is a naturally occurring element in the earth's crust, present at trace levels in coastal sediments and seawater worldwide. Every sea salt contains some measurable amount; a result of zero typically reflects the detection limit of the lab, not the absence of lead in nature. Our result of 0.05 mg/kg is 20 times below the EU's legal maximum for food-grade salt (Regulation 2023/915, Annex I), and consistent with low-contamination sources in published sea salt literature.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTEXT CHARTS -->
-<section class="charts-section">
-  <img src="zafra-salt-harvest-hand.jpg" alt="Salt harvest at Laguna de Cuyutlán, Colima, Mexico">
-  <div class="charts-overlay"></div>
-  <div class="container charts-content">
-
-    <!-- Chart 1: Lead -->
-    <div class="context-box reveal">
-      <div class="context-header">
-        <span>Lead in Sea Salt — Context</span>
-        <span class="context-source">Source: Saladino/Mamavation independent study, 23 salts tested</span>
-      </div>
-      <div class="context-intro">
-        Independent research found lead present in the vast majority of commercial sea salts. The following figures are drawn from published third-party studies, not Zafra's own testing.
-      </div>
-      <div class="context-bars">
-        <div class="bar-row">
-          <div class="bar-brand">Celtic Sea Salt</div>
-          <div class="bar-track"><div class="bar-fill high" style="width: 92%"></div></div>
-          <div class="bar-value">~460 ppb</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-brand">Redmond Real Salt</div>
-          <div class="bar-track"><div class="bar-fill high" style="width: 26%"></div></div>
-          <div class="bar-value">~132 ppb</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-brand">Baja Gold</div>
-          <div class="bar-track"><div class="bar-fill moderate" style="width: 20%"></div></div>
-          <div class="bar-value">~100 ppb</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-brand zafra-brand">Zafra ✦</div>
-          <div class="bar-track"><div class="bar-fill zafra" style="width: 10%"></div></div>
-          <div class="bar-value">50 ppb</div>
-        </div>
-        <div class="bar-row">
-          <div class="bar-brand">Jacobsen / Maldon</div>
-          <div class="bar-track"><div class="bar-fill nd" style="width: 4%"></div></div>
-          <div class="bar-value nd-val">ND at 20 ppb*</div>
-        </div>
-      </div>
-      <div class="context-note">
-        * Jacobsen and Maldon report "not detected" at a 20 ppb detection threshold. Zafra's laboratory uses a 10 ppb threshold — twice the sensitivity. Figures for other brands are drawn from published independent research; Zafra makes no claims on their behalf.
-      </div>
     </div>
 
   </div>

@@ -55,38 +55,60 @@
 
   .back-link:hover { color: var(--accent); text-decoration: none; }
 
-  .blog-wrap {
-    max-width: 680px;
+  .posts-grid {
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px 28px 100px;
+    padding: 48px 28px 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
-  .article-card {
-    padding: 32px 0;
-    border-bottom: 1px solid var(--kraft);
+  @media (max-width: 600px) {
+    .posts-grid { grid-template-columns: 1fr; }
   }
 
-  .article-card:first-of-type { padding-top: 0; }
-  .article-card:last-of-type { border-bottom: none; }
+  .post-card {
+    background: var(--bg);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .post-thumb {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .post-card-body {
+    padding: 1.5rem;
+  }
 
   .article-title {
     font-family: 'Cinzel', serif;
     font-weight: 500;
     letter-spacing: 0.02em;
     color: var(--dark);
-    font-size: 21px;
+    font-size: 18px;
     line-height: 1.4;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .article-title a { color: var(--dark); }
   .article-title a:hover { color: var(--accent); text-decoration: none; }
 
   .article-excerpt {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--body-text);
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
     margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .read-more {
@@ -99,7 +121,7 @@
   .blog-hero {
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 35vh;
     overflow: hidden;
   }
 
@@ -129,19 +151,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Cinzel', serif;
-    font-weight: 500;
-    letter-spacing: 0.04em;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    font-size: 34px;
-    color: var(--bg);
+    font-size: 11px;
+    color: var(--accent);
     z-index: 1;
     margin: 0;
   }
 
   @media (max-width: 480px) {
-    .blog-hero { height: 40vh; }
-    .blog-hero-label { font-size: 28px; }
+    .blog-hero { height: 25vh; }
   }
 
 </style>
@@ -157,19 +178,26 @@
   <h1 class="blog-hero-label">Blog</h1>
 </section>
 
-<div class="blog-wrap">
+<div class="posts-grid">
 
-  <div class="article-card">
-    <h2 class="article-title"><a href="salt-origin-matters.html">Why Where Your Salt Comes From Actually Matters</a></h2>
-    <p class="article-excerpt">Salt is one of the oldest traded commodities on earth. For most of human history, its origin was everything — and where it comes from still shapes what ends up in the bag.</p>
-    <a href="salt-origin-matters.html" class="read-more">Read more →</a>
+  <div class="post-card">
+    <img src="../zafra-salt-harvest-hand.jpg" alt="Salt harvest at Laguna de Cuyutlán, Colima, Mexico" class="post-thumb" style="object-position: center top;">
+    <div class="post-card-body">
+      <h2 class="article-title"><a href="salt-origin-matters.html">Why Where Your Salt Comes From Actually Matters</a></h2>
+      <p class="article-excerpt">Salt is one of the oldest traded commodities on earth. For most of human history, its origin was everything — and where it comes from still shapes what ends up in the bag.</p>
+      <a href="salt-origin-matters.html" class="read-more">Read more →</a>
+    </div>
   </div>
 
-  <div class="article-card">
-    <h2 class="article-title"><a href="heavy-metals-sea-salt.html">What's Actually in Your Sea Salt? Heavy Metals and Why Testing Matters</a></h2>
-    <p class="article-excerpt">Most sea salt brands show you a beautiful photo of a coastline and tell you their salt is "natural" and "pure." What they almost never show you is a lab report.</p>
-    <a href="heavy-metals-sea-salt.html" class="read-more">Read more →</a>
+  <div class="post-card">
+    <img src="../zafra-salt-spoon-dark.jpg" alt="Zafra Colima sea salt on a wooden spoon" class="post-thumb">
+    <div class="post-card-body">
+      <h2 class="article-title"><a href="heavy-metals-sea-salt.html">What's Actually in Your Sea Salt? Heavy Metals and Why Testing Matters</a></h2>
+      <p class="article-excerpt">Most sea salt brands show you a beautiful photo of a coastline and tell you their salt is "natural" and "pure." What they almost never show you is a lab report.</p>
+      <a href="heavy-metals-sea-salt.html" class="read-more">Read more →</a>
+    </div>
   </div>
+
 </div>
 
 </body>
