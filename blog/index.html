@@ -118,52 +118,6 @@
     color: var(--accent);
   }
 
-  .blog-hero {
-    position: relative;
-    width: 100%;
-    height: 35vh;
-    overflow: hidden;
-  }
-
-  .blog-hero img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-  }
-
-  .blog-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.1) 0%,
-      rgba(30,26,23,0.6) 100%
-    );
-  }
-
-  .blog-hero-label {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    font-size: 11px;
-    color: var(--accent);
-    z-index: 1;
-    margin: 0;
-  }
-
-  @media (max-width: 480px) {
-    .blog-hero { height: 25vh; }
-  }
 
 </style>
 </head>
@@ -171,17 +125,10 @@
 
 <a href="../index.html" class="back-link">← Zafra</a>
 
-<!-- BLOG HERO -->
-<section class="blog-hero">
-  <img src="../zafra-salt-harvest-hand.jpg" alt="Salt harvest at Laguna de Cuyutlán, Colima, Mexico">
-  <div class="blog-hero-overlay"></div>
-  <h1 class="blog-hero-label">Blog</h1>
-</section>
-
 <div class="posts-grid">
 
   <div class="post-card">
-    <img src="../zafra-salt-harvest-hand.jpg" alt="Salt harvest at Laguna de Cuyutlán, Colima, Mexico" class="post-thumb" style="object-position: center top;">
+    <img src="../zafra-salt-harvest-hand.jpg" alt="Salt harvest at Laguna de Cuyutlán, Colima, Mexico" class="post-thumb" style="object-position: center bottom;">
     <div class="post-card-body">
       <h2 class="article-title"><a href="salt-origin-matters.html">Why Where Your Salt Comes From Actually Matters</a></h2>
       <p class="article-excerpt">Salt is one of the oldest traded commodities on earth. For most of human history, its origin was everything — and where it comes from still shapes what ends up in the bag.</p>
